@@ -16,4 +16,15 @@ class DeckTest {
         assertEquals(52, this.deck.cardCount());
     }
 
+    @Test
+    public void deckIsShuffled() {
+        Deck deck2 = new Deck();
+        assertFalse(deck.equals(deck2));
+    }
+
+    @Test
+    public void canGetCard() {
+        Card card = deck.getCard();
+        assertNotNull(card);
+    }
 }

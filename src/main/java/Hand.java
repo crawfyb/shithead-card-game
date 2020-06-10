@@ -5,7 +5,7 @@ public class Hand {
     private ArrayList<Card> hand;
 
     public Hand() {
-        
+
 
     }
 }

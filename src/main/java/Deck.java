@@ -6,18 +6,29 @@ public class Deck {
     private ArrayList<Card> cards;
     
     public Deck() {
-        this.cards = new ArrayList<Card>();
+        cards = new ArrayList<Card>();
+        generateDeck();
+        shuffle();
 
-                for(Suit suit : Suit.values()) {
-                    for(Rank rank : Rank.values()) {
-                        Card card = new Card(suit, rank);
-                        this.cards.add(card);
-                    }
-                }
-                Collections.shuffle(this.cards);
     }
 
     public int cardCount() {
-        return this.cards.size();
+        return cards.size();
     }
+
+    public void generateDeck() {
+        for (Suit suit : Suit.values()) {
+            for (Rank rank : Rank.values()) {
+                Card card = new Card(suit, rank);
+                cards.add(card);
+            }
+        }
+    }
+
+    public void shuffle() {
+        Collections.shuffle(this.cards);    }
+
+        public Card getCard() {
+        return cards.remove(0);
+        }
 }
